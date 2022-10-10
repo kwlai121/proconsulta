@@ -1,0 +1,169 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "abstracts/_variables.scss";
+@import "abstracts/_mixins.scss";
+
+body{
+    font-family: 'Roboto', sans-serif;
+    .support-company-area .support-wrapper .left-content {
+        width: 40%;
+        //padding-left: 366px;
+    }
+    
+    
+    .support-company-area .support-wrapper .right-content {
+        width: 60%;
+        position: relative;
+       
+    }
+    .pt-10 {
+        padding-top: 10px;
+    }
+    
+    .fix {
+        overflow: hidden;
+    }
+
+    .support-company-area .support-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .box-29291 {
+        color: $white;
+        position: relative;
+        z-index: 2;
+        margin-right: -60px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        padding: 4rem;
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    .bg-purple {
+        background-color: $purple800;
+    }
+    .heading-form{
+        @include font($font-family-montse, 34px, 700);
+    }
+
+    input[type=text]{
+        background-color: $purple700;
+        border: none;
+        border-radius: 0;
+        resize: none;
+        outline: none;
+        color: $white;
+        padding: 22px 16px;
+    }
+    input[type=number]{
+        background-color: $purple700;
+        border: none;
+        border-radius: 0;
+        resize: none;
+        outline: none;
+        color: $white;
+        padding: 22px 16px;
+    }
+    
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        @include font($font-family-roboto, 18px, 400);
+        color: $white $i;
+
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $white;
+      }
+      
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $white;
+      }
+
+    .submit{
+        background-color: $orange700;
+        color: $white;
+        border: none;
+        border-radius: 0;
+        resize: none;
+        outline: none;
+    }
+    // Navbar start
+    .nav-link{
+        @include font($font-family-roboto, 20px, 700);
+    }
+    .initSession{
+        @include font($font-family-roboto, 16px, 500);
+        background-color: $orange700;
+        color: $white;
+    }
+    // Navbar end
+    // Main titles start
+    .mainTitle{
+        @include font($font-family-montse, 52px, 700);
+        span{
+            color: $orange700;
+        }
+    }
+
+    .mainTitle2{
+        @include font($font-family-montse, 40px, 700);
+    }
+
+
+    
+    // Main titles end
+
+    .qsText{
+        @include font($font-family-roboto, 18px, 400);
+        color: $grey400;
+    }
+
+    .line {
+        width: 73px;
+        height: 2px;
+        background: $orange700;
+        margin-bottom: 4px;
+        margin-left: 4px;
+        display: inline-block;
+    }
+
+
+
+
+
+}
+ 
+@include media-breakpoint-only(sm) {
+
+}
+
+@include media-breakpoint-only(md) {
+ 
+}
+
+@include media-breakpoint-only(lg) {
+ 
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 1800px){
+    .support-company-area .support-wrapper .left-content {
+        padding-left: 200px;
+        width: 49%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+    .support-company-area .support-wrapper .left-content {
+        width: 49%;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+    .support-company-area .support-wrapper .right-content {
+        width: 49%;
+    }
+}
+

@@ -1,0 +1,37 @@
+// Text mixins
+@mixin font($font-family, $size, $weight){
+    font: {
+        family: $font-family;
+        size: $size;
+        weight: $weight;
+    }
+}
+
+// Box shadows mixins
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+}
+
+// Button Mixin
+@mixin button-bg($bg) {
+    background: $bg;
+    border: 2px solid #F3C200 !important;
+    &:hover {
+      background:darken($bg, 8%);
+      transition: all 0.3s ease;
+      color: $secColorHover;
+    }
+    &:active {
+      background:darken($bg, 25%);
+    } 
+  }
+
