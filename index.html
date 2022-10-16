@@ -12,16 +12,16 @@
 </head>
 <body>
     <!--Header-->
-    <div class="container">
+    <div class="container pt-5">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo.png" alt=proconsulta">
             </a>
-  
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
             </button>
-  
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  mx-auto ">
                 <li class="nav-item">
@@ -43,11 +43,11 @@
                 </a>
                 <a class="cart_link" href="#">
                 </a>
-                <form class="form-inline">
+                <!-- <form class="form-inline">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
-                </form>
+                </form> -->
                 <a href="" class="btn initSession">
                   Iniciar Sesión
                 </a>
@@ -91,31 +91,45 @@
                 <!-- img -->
                 <div class="right-img">
                     <img src="img/jumboImage.jpg" alt="image">
-                </div> 
+                </div>
             </div>
         </div>
     </section>
     <!--Quienes somos start-->
-    <div class="container py-5">
+    <div class="container py-5 quienes-somos">
         <div class="row">
-            <div class="col-4">
+            <div class="col-5">
                 <h1 class="mainTitle2">Quienes somos?</h1>
             </div>
-            <div class="col-8">
-                <p class="w-50 qsText">Somos una empresa líder en la solución de problemas constructivos o electromecánicos tanto en casas de
+            <div class="col-7">
+                <p class="w-47 qsText quienes-somos-text">Somos una empresa líder en la solución de problemas constructivos o electromecánicos tanto en casas de
                     habitación, oficinas, condominios, edificios, y demás estructuras que así lo requiera. Nuestros servicios se basan en tres pilares básicos: </p>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <img src="img/satisfacer.jpg" alt="satisfacer">
-                <p class="text-center">Satisfacer</p>
+                <div class="card card-quienes-somos" style="width: 20rem;">
+                    <img id="satisfacer" src="img/satisfacer.jpg" class="card-img-top" alt="satisfacer">
+                    <div class="card-body">
+                      <p class="text-center quienes-somos-p">Satisfacer</p>
+                    </div>
+                </div>
             </div>
             <div class="col-4">
-                <img src="img/liderazgo.jpg" alt="liderazgo">
+                <div class="card card-quienes-somos" style="width: 20rem;">
+                    <img id="liderazgo" src="img/liderazgo.jpg" class="card-img-top" alt="liderazgo">
+                    <div class="card-body">
+                        <p class="text-center quienes-somos-p">Liderazgo</p>
+                    </div>
+                </div>
             </div>
             <div class="col-4">
-                <img src="img/innovacion.jpg" alt="innovacion">
+                <div class="card card-quienes-somos" style="width: 20rem;">
+                    <img id="innovacion" src="img/innovacion.jpg" class="card-img-top" alt="innovacion">
+                    <div class="card-body">
+                        <p class="text-center quienes-somos-p">Innovación</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -124,57 +138,100 @@
     <!--Nuestra Historia Start-->
     <div class="container pb-5">
         <div class="row">
-            <div class="col-7">
-                <img src="img/historia.jpg" alt="Historia">
-            </div>
-            <div class="col-5">
+            <div class="col-5 multipleitems-margin-vertical">
                 <small>Nuestra historia</small><div class="line"></div>
                 <h1 class="mainTitle2">Conducidos por valores de familia, confianza y honestidad</h1>
-                <p>Nuestra historia inicia en 2018. Desde el primer día nos hemos 
-                    comprometido con la calidad de entrega, con nuestros clientes 
-                    y con nuestra gente. Estos pilares han construido nuestro legado: 
-                    más de XX proyectos. Contamos con un equipo de más de xxxx personas 
+                <p class="qsText">Nuestra historia inicia en 2018. Desde el primer día nos hemos
+                    comprometido con la calidad de entrega, con nuestros clientes
+                    y con nuestra gente. Estos pilares han construido nuestro legado:
+                    más de XX proyectos. Contamos con un equipo de más de xxxx personas
                     y está creciendo a medida necesidades de nuestros clientes.</p>
+            </div>
+            <div class="col-7">
+                <img src="img/historia.jpg" alt="Historia">
             </div>
         </div>
     </div>
     <!--Nuestra Historia End-->
 
     <!--Somos su mejor opción Start-->
-    <div class="container">
+    <div class="container pb-5">
         <div class="row">
-            <div class="col-5">
-                <small>Somos su mejor opción</small><div class="line"></div>
-                <h1 class="mainTitle2">Queremos ser el su construtor de elección!</h1>
-                <p>ProConsulta aspira a ser el constructor de elección para nuestros clientes, 
-                    consultores, contratistas y clientes en general. Nos basamos en nuestros 
-                    valores fundamentales de responsabilidad, dinamismo y trabajo en equipo.</p>
-
-                <p>Somos responsables y cumplimos nuestras promesas, somos dinámicos y aportamos 
-                    energía a nuestros proyectos y trabajamos en equipo para lograr objetivos compartidos.</p>
-            </div>
             <div class="col-7">
                 <img class="img-fluid ms-auto" src="img/mejorOpcion.jpg" alt="Mejor Opción">
             </div>
+            <div class="col-5">
+                <small>Somos su mejor opción</small><div class="line"></div>
+                <h1 class="mainTitle2">Queremos ser el su construtor de elección!</h1>
+                <p class="qsText">ProConsulta aspira a ser el constructor de elección para nuestros clientes,
+                    consultores, contratistas y clientes en general. Nos basamos en nuestros
+                    valores fundamentales de responsabilidad, dinamismo y trabajo en equipo.</p>
+
+                <p class="qsText">Somos responsables y cumplimos nuestras promesas, somos dinámicos y aportamos
+                    energía a nuestros proyectos y trabajamos en equipo para lograr objetivos compartidos.</p>
+            </div>
         </div>
     </div>
-    <!--Somos su mejor opción End-->   
+    <!--Somos su mejor opción End-->
 
-        <!--Servicios adicionales Start-->
-        <div class="container">
+
+    <!-- Nuestros Servicios Start -->
+    <div class="container-fluid nuestros-servicios">
+        <div class="container py-5">
             <div class="row">
-                <div class="col-5">
-                    <img src="img/servAdicionales.jpg" alt="Servicios adicionales">
+                <div class="col-5 multipleitems-margin-vertical">
+                    <small>Nuestros Servicios</small><div class="line"></div>
+                    <h1 class="mainTitle2">Somos la solución efectiva de principio a fin.</h1>
+                    <p class="qsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
                 <div class="col-7">
+                    <div class="row nuestros-servicios-menu">
+                        <div class="col-5">
+                            <div class="scroll">
+                                <div class="scroll-pintar"></div>
+                            </div>
+                            <ul class="nuestros-servicios-lista">
+                                <li id="contruccion">Construcción</li>
+                                <li id="remodelacion">Remodelación</li>
+                                <li id="asesoria">Consultoría y Asesoría</li>
+                                <li id="tramitología">Tramitología</li>
+                                <li id="obras">Obras Complementarias</li>
+                            </ul>
+                        </div>
+                        <div class="col-7">
+                            <ul class="nuestros-servicios-text">
+                                <li id="contruccion-text"></li>
+                                <li id="remodelacion-text"></li>
+                                <li id="asesoria-text"></li>
+                                <li id="tramitología-text"></li>
+                                <li id="obras-text"></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nuestros Servicios End -->
+
+
+        <!--Servicios adicionales Start-->
+        <div class="container servicios-adicionales py-5">
+            <div class="row">
+                <div class="col-7">
+                    <img src="img/servAdicionales.jpg" alt="Servicios adicionales">
+                </div>
+                <div class="col-5 multipleitems-margin-vertical">
                     <small>Servicios adicionales</small><div class="line"></div>
                     <h1 class="mainTitle2">Consultoría</h1>
-                    <p>Brindamos adicionalmente, consultoría de proyectos con responsabilidad civil, eléctrica, 
-                    electromecánica, peritajes, estructurales, agrimensura.Nuestra experiencia en trámites y 
-                    consultaría abarca más de 15000 metros cuadrados desde diseño de anteproyecto, 
+                    <p class="qsText">Brindamos adicionalmente, consultoría de proyectos con responsabilidad civil, eléctrica,
+                    electromecánica, peritajes, estructurales, agrimensura.Nuestra experiencia en trámites y
+                    consultaría abarca más de 15000 metros cuadrados desde diseño de anteproyecto,
                     presupuestos, tramitología e inspección.</p>
-                    
-                    <p>Dentro del área de anteproyecto y medida exploratoria nuestro departamento de diseño damos 
+
+                    <p class="qsText">Dentro del área de anteproyecto y medida exploratoria nuestro departamento de diseño damos
                     el servicio de modelos gráficos en 3D.</p>
                 </div>
 
@@ -183,18 +240,18 @@
         <!--Servicios adicionales End-->
 
         <!--Algunos de nuestros clientes Start-->
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-12">
+        <div class="container pt-5 pb-1 nuestros-clientes">
+            <div class="row nuestros-clientes-border1">
+                <div class="col-12 nuestros-clientes-border1-margin">
                     <h1 class="text-center mainTitle2">Algunos de nuestros clientes</h1>
                     <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-    			<div class="col-sm ftco-animate fadeInUp ftco-animated">
+        <div class="container pb-5 pt-3 nuestros-clientes">
+            <div class="row nuestros-clientes-border2">
+    			<div class="col-sm ftco-animate fadeInUp ftco-animated nuestros-clientes-border2-margin">
     				<a href="#" class="partner"><img src="img/mc.png" class="img-fluid" alt="MC"></a>
     			</div>
     			<div class="col-sm ftco-animate fadeInUp ftco-animated">
@@ -214,6 +271,147 @@
     			</div>
     		</div>
         </div>
-        <!--Algunos de nuestros clientes End-->  
+        <!--Algunos de nuestros clientes End-->
+
+        <!-- Proyectos Start -->
+        <div class="container-fluid proyectos py-5">
+                <div class="row">
+                    <div class="col-5 multipleitems-margin-vertical">
+                        <small>Proyectos</small><div class="line"></div>
+                        <h1 class="mainTitle2">+15.000 metros cuadrados de experiencia</h1>
+                        <p class="qsText">Desarrollamos líneas inmobiliarias en los cuales sus profesionales cuentan con más de 12 años en el área de
+                            la construcción.
+                            Nuestra experiencia comprobable en diferentes áreas de la construcción ha sido en más 15000 metros cuadrados remodelaciones,
+                            casas de habitación, edificaciones, apartamentos, canalizaciones subterráneas, boulevard, conformación y composición de aceras,
+                            locales comerciales, parqueos, tapias perimetrales entre varios tipos más.
+                        </p>
+                    </div>
+                    <div class="col-7 proyectos-carousel">
+                        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item item1">
+                                    <div class="col-md-5">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="img/slide1.jpg" class="img-fluid">
+                                            </div>
+                                            <div class="card-body card-body-proyectos">
+                                                <h5 class="card-title">Nombre del Proyecto</h5>
+                                                <p class="card-text">Tipo de proyecto   |   2021</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item item2">
+                                    <div class="col-md-5">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="img/slide2.jpg" class="img-fluid">
+                                            </div>
+                                            <div class="card-body card-body-proyectos">
+                                                <h5 class="card-title">Nombre del Proyecto</h5>
+                                                <p class="card-text">Tipo de proyecto   |   2021</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item item3">
+                                    <div class="col-md-5">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="img/slide3.jpg" class="img-fluid">
+                                            </div>
+                                            <div class="card-body card-body-proyectos">
+                                                <h5 class="card-title">Nombre del Proyecto</h5>
+                                                <p class="card-text">Tipo de proyecto   |   2021</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item item4 active">
+                                    <div class="col-md-5">
+                                        <div class="card">
+                                            <div class="card-img">
+                                                <img src="img/slide4.jpg" class="img-fluid">
+                                            </div>
+                                            <div class="card-body card-body-proyectos">
+                                                <h5 class="card-title">Nombre del Proyecto</h5>
+                                                <p class="card-text">Tipo de proyecto   |   2021</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-scroll">
+                                <div class="scroll-carousel">
+                                    <div class="scroll-line"></div>
+                                </div>
+                                <div class="control-carousel">
+                                    <a class="control-carousel-right" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                                        <img id="control-carousel-right" src="img/left-arrow.png" alt="">
+                                    </a>
+                                    <a class="control-carousel-left" href="#recipeCarousel" role="button" data-bs-slide="next">
+                                        <img id="control-carousel-left" src="img/right-arrow.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Proyectos End  -->
+
+        <!-- Contactenos Start -->
+        <div class="container-fluid contactenos py-5">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="contactenos-wrapper">
+                            <small class="contactenos-small">Contactenos</small><div class="line contactenos-line"></div>
+                            <h1 class="mainTitle2">Seamos socios! Queremos trabajar en su proyecto!</h1>
+                            <button class="btn btn-contactenos">Contactenos</button>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                    </div>
+                </div>
+        </div>
+        <!-- Contactenos End  -->
+
+        <div class="container-fluid footer">
+            <div class="row">
+                <div class="col-5">
+                    <div class="footer-wrapper-right">
+                        <div class="footer-logo">
+                            <img src="img/LogoProConsultaFooter.png" alt="">
+                        </div>
+                        <div class="footer-socialmedia">
+                            <img src="img/facebook.png" alt="">
+                            <img src="img/instagram.png" alt="">
+                            <img src="img/tiktok.png" alt="">
+                            <img src="img/whatsapp.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="footer-wrapper-left">
+                        <p class="footer-contactenos">Contáctenos</p>
+                        <p>Email <br>
+                            administracion@proconsultaconsultores.com</p>
+                        <p>Dirección <br>
+                            San José, San Sebastián</p>
+                        <p>Teléfono <br>
+                            (+506) 4703 5854</p>
+                        <p>WhatsApp <br>
+                            (+506) 7117 1177</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="js/script.js"></script>
+
 </html>

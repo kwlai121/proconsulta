@@ -8,17 +8,17 @@ body{
         width: 40%;
         //padding-left: 366px;
     }
-    
-    
+
+
     .support-company-area .support-wrapper .right-content {
         width: 60%;
         position: relative;
-       
+
     }
     .pt-10 {
         padding-top: 10px;
     }
-    
+
     .fix {
         overflow: hidden;
     }
@@ -66,17 +66,16 @@ body{
         color: $white;
         padding: 22px 16px;
     }
-    
+
     ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         @include font($font-family-roboto, 18px, 400);
         color: $white $i;
-
       }
-      
+
       :-ms-input-placeholder { /* Internet Explorer 10-11 */
         color: $white;
       }
-      
+
       ::-ms-input-placeholder { /* Microsoft Edge */
         color: $white;
       }
@@ -89,9 +88,17 @@ body{
         resize: none;
         outline: none;
     }
+
+
+    .multipleitems-margin-vertical > *{
+        margin: 8px 0 8px 0;
+    }
+
     // Navbar start
     .nav-link{
-        @include font($font-family-roboto, 20px, 700);
+        @include font($font-family-roboto, 16px, 500);
+        color: black;
+        margin: 0 17px 0 17px;
     }
     .initSession{
         @include font($font-family-roboto, 16px, 500);
@@ -112,7 +119,7 @@ body{
     }
 
 
-    
+
     // Main titles end
 
     .qsText{
@@ -129,22 +136,221 @@ body{
         display: inline-block;
     }
 
+    small {
+        color: $orange700;
+        @include font($font-family-roboto, 16px, 500);
+    }
+
+    .container {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .quienes-somos-text {
+        padding-right: 39%;
+    }
+    .quienes-somos .card-quienes-somos {
+        width: 20rem;
+        border: none;
+        height: 10%;
+    }
+    .quienes-somos-p {
+        @include font($font-family-roboto, 20px, 700);
+        margin-top: 10px;
+    }
+    .card-quienes-somos:hover {
+        background-color: #262626;
+    }
+
+    // --> Algunos de nuestros clientes Start borde
+    .nuestros-clientes-border1 {
+        border-top: 1px solid #DBDBDB;
+    }
+    .nuestros-clientes-border1-margin{
+        margin-top: 5%;
+    }
+    .nuestros-clientes-border2-margin{
+        margin-bottom: 5%;
+    }
+    .nuestros-clientes-border2 {
+        border-bottom: 1px solid #DBDBDB;
+    }
+
+
+    // --> nuestros servicios
+    .nuestros-servicios {
+        background: #F3F3F3;
+    }
+    // menu Nuestros Servicios
+    .nuestros-servicios-lista li {
+        @include font($font-family-roboto, 20px, 500);
+        list-style-type: none; /* Remove bullets */
+        padding-top: 8%;
+        padding-left: 5%;
+        width: 293px;
+        height: 72px;
+        color: black;
+    }
+    .nuestros-servicios-text {
+        @include font($font-family-roboto, 18px, 400);
+        list-style-type: none;
+        color: black;
+        // padding: 10px;
+        margin-bottom: 0%;
+        margin-left: 20%;
+    }
+    .li-active {
+        background-color: $orange700;
+        color: $white;
+    }
+    .li-inactive {
+        color: black;
+    }
+    .scroll {
+        float: left;
+        height: 200px;
+        width: 4px;
+        background-color: #DFDFDF;
+        // border: 1px solid gray;
+    }
+    .scroll-pintar {
+        height: 40px;
+        background-color: $orange700;
+        width: 4px;
+    }
+    .proyectos {
+        padding-left: 10%;
+    }
+    .proyectos-carousel { // proyectos section
+        overflow-x: hidden;
+    }
+    .carousel {
+        width: 1033px;
+    }
+    .card {
+        width: 414px;
+        height: 393px;
+    }
+    .card-body-proyectos {
+        background-color: $purple700;
+        color: white;
+    }
+    .wrapper-scroll {
+        // margin-top: 2%;
+        padding: 2% 0 2% 0;
+
+    }
+    .scroll-carousel {
+        width: 160px;
+        height: 4px;
+        background-color: #DFDFDF;
+        float: left;
+        margin-top: 1.2%;
+    }
+    .scroll-line {
+        width: 40px;
+        height: 4px;
+        background-color: $orange700;
+    }
+    .control-carousel {
+        float: left;
+        margin-left: 23%;
+    }
+    .control-carousel-right {
+        display: inline;
+    }
+    .control-carousel-left {
+        display: inline;
+        margin-left: 20px;
+    }
+    .control-carousel-click {
+        filter: invert(52%) sepia(17%) saturate(7408%) hue-rotate(349deg) brightness(99%) contrast(96%);
+    }
+    .control-carousel-click-reverse {
+        filter: invert(36%) sepia(0%) saturate(569%) hue-rotate(136deg) brightness(101%) contrast(92%);
+    }
 
 
 
+    .contactenos {
+        background-image: url(../img/Group27.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: $purple800;
+        color: $white;
+    }
+    .contactenos-wrapper {
+        padding: 10% 5% 10% 20%;
+    }
+    .contactenos-line {
+        background-color: $white;
+    }
+    .contactenos-wrapper > .mainTitle2, .btn-contactenos, .contactenos-small {
+        margin: 8px 0 8px 0;
+        color: $white;
+    }
+    .btn-contactenos {
+        background-color: $orange700;
+        color: white;
+        width: 255px;
+        border-radius: 0%;
+    }
+    .btn-contactenos:hover {
+        background-color: #cd5b1a;
+    }
 
+    .footer {
+        background-color: #262626;
+    }
+    .footer-wrapper-right {
+        padding: 10% 5% 10% 20%;
+        color: white;
+    }
+    .footer-wrapper-left {
+        padding: 10% 5% 10% 5%;
+        color: white;
+    }
+    .footer-socialmedia {
+        margin-top: 48%;
+    }
+    .footer-socialmedia > * {
+        margin-right: 30px;
+    }
+
+    .footer-contactenos {
+
+    }
 }
- 
-@include media-breakpoint-only(sm) {
 
+@include media-breakpoint-only(xs) {
+    body {
+        .pt-5 {
+            margin-top: auto;
+        }
+        .container {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .mainTitle {
+            font-size: 25px;
+            width: 100%
+        }
+    }
+}
+
+@include media-breakpoint-only(sm) {
+    body {
+        .mainTitle {
+            font-size: 25px;
+        }
+    }
 }
 
 @include media-breakpoint-only(md) {
- 
+
 }
 
 @include media-breakpoint-only(lg) {
- 
+
 }
 
 @media only screen and (min-width: 1441px) and (max-width: 1800px){
@@ -167,3 +373,40 @@ body{
     }
 }
 
+
+
+
+//  -->  Carousel
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  /* medium and up screens */
+  @media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+  }
+
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start {
+  transform: translateX(0);
+  }
