@@ -10771,6 +10771,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -11066,17 +11074,145 @@ body .footer-socialmedia {
 body .footer-socialmedia > * {
   margin-right: 30px;
 }
+body .footer-wrapper-left p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+body #footer-contactenos {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: gray;
+}
+
 @media (max-width: 575.98px) {
   body .pt-5 {
-    margin-top: auto;
+    padding-top: 0rem !important;
   }
-  body .container {
-    padding-left: 5%;
-    padding-right: 5%;
+  body .py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  body .container, body .container-fluid, body .container-sm, body .container-md, body .container-lg, body .container-xl, body .container-xxl {
+    padding-left: 0%;
+    padding-right: 0%;
   }
   body .mainTitle {
+    font-size: 30px;
+    width: 60%;
+  }
+  body .h-100 {
+    height: 60% !important;
+  }
+  body .box-29291 {
+    margin-right: -68px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 1rem;
+  }
+  body .mainTitle2, body .heading-form {
     font-size: 25px;
     width: 100%;
+    padding: 0% 2% 0% 2%;
+  }
+  body .right-img img {
+    width: 305%;
+  }
+  body .qsText {
+    padding: 0% 2% 0% 2%;
+    font-size: 16px;
+  }
+  body .quienes-somos .card-quienes-somos {
+    width: auto;
+  }
+  body .quienes-somos-p {
+    margin-top: 0px;
+  }
+  body input[type=text] {
+    padding: 5px 3px;
+  }
+  body input[type=number] {
+    padding: 5px 3px;
+  }
+  body #recipeCarousel {
+    width: 100%;
+  }
+  body .card-body {
+    padding: 0%;
+  }
+  body .nuestros-servicios-menu {
+    height: 320px;
+  }
+  body .nuestros-servicios-lista li {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    list-style-type: none;
+    padding: 2% 0% 2% 2%;
+    width: 80%;
+    height: 100%;
+    color: black;
+  }
+  body .nuestros-servicios-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0%;
+    margin-left: 0%;
+  }
+  body .ftco-animate {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7%;
+  }
+  body .proyectos {
+    padding: 0%;
+  }
+  body .scroll-carousel {
+    margin: 1% 21% 0px 2%;
+  }
+  body .scroll-line {
+    margin: 0% 21% 0px 120px;
+  }
+  body #control-carousel-left {
+    width: 30px;
+  }
+  body #control-carousel-right {
+    width: 45px;
+  }
+  body .control-carousel {
+    float: left;
+    margin: 1% 21% 0px 21%;
+  }
+  body .contactenos-wrapper {
+    padding: 0;
+  }
+  body .contactenos-wrapper > * {
+    margin: 10% 0% 10% 0%;
+  }
+  body .btn-contactenos {
+    width: 60%;
+    margin-left: 5px;
+  }
+  body .footer-wrapper-right {
+    padding: 5% 5% 5% 2%;
+    color: white;
+  }
+  body .footer-socialmedia {
+    margin-top: 8%;
+  }
+  body .footer-socialmedia > * {
+    margin-right: 5px;
+  }
+  body .footer-wrapper-left p {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  body #footer-contactenos {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {

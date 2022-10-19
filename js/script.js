@@ -1,4 +1,5 @@
 
+//
 $(document).ready(function(){
     $("#satisfacer").hover(
         function() {$(this).attr("src","img/satisfacer.png");},
@@ -60,21 +61,33 @@ function pintarBarraCarousel(barLevel) {
     elemento.style.marginLeft = ((barLevel-1) * 40) + "px";
 }
 
-
-document.getElementById("control-carousel-left").classList.add("control-carousel-click");
-document.getElementById("control-carousel-right").classList.add("control-carousel-click-reverse");
-// onclick botones carousel, cambia color
+// onclick botones carousel, cambia color cuando carga pagina
+document.getElementById("control-carousel-left").classList.add("control-carousel-click-reverse");
+document.getElementById("control-carousel-right").classList.add("control-carousel-click");
+// cuando se hace click
 document.getElementById("control-carousel-left").addEventListener('click', function (e) {
-    e.target.classList.add("control-carousel-click"); // control-carousel-click-reverse
-    elemento = document.getElementById("control-carousel-right");
-    elemento.classList.add("control-carousel-click-reverse"); // make gray
-    elemento.classList.remove("control-carousel-click");
+    right = document.getElementById("control-carousel-right"); // get elements
+    left = e.target;
+
+    right.classList.remove("control-carousel-click"); // remove all color
+    left.classList.remove("control-carousel-click");
+    right.classList.remove("control-carousel-click-reverse");
+    left.classList.remove("control-carousel-click-reverse");
+
+    left.classList.add("control-carousel-click");       // add color
+    right.classList.add("control-carousel-click-reverse");
 })
 document.getElementById("control-carousel-right").addEventListener('click', function (e) {
-    e.target.classList.add("control-carousel-click");
-    elemento = document.getElementById("control-carousel-left");
-    elemento.classList.add("control-carousel-click-reverse"); // make gray
-    elemento.classList.remove("control-carousel-click");
+    left = document.getElementById("control-carousel-left");
+    right = e.target;
+
+    right.classList.remove("control-carousel-click"); // remove all color
+    left.classList.remove("control-carousel-click");
+    right.classList.remove("control-carousel-click-reverse");
+    left.classList.remove("control-carousel-click-reverse");
+
+    right.classList.add("control-carousel-click");       // add color
+    left.classList.add("control-carousel-click-reverse");
 })
 
 
@@ -101,14 +114,18 @@ const NuestroServiciosEstilo = {
 document.querySelector(".nuestros-servicios-lista").addEventListener("click", function(e){  // evento click en el menu de nuestros servicios
     removeText(); // remueve el texto de todos los elementos li de la par
     cleanElements(); // quitar clase li-active de todos los li del menu y poner color negro (default)
-    var elemento1 = document.getElementById(e.target.id); // llamar elemento al hacer click y obtiene el id
-    elemento1.classList.add("li-active"); // agregar clase al elemento que se le hizo click
-    elemento1.style.color = "white";
-    var elemento2 = document.getElementById(e.target.id + "-text"); // llamar donde se va a poner el text del objecto NuestroServiciosText
-    elemento2.textContent = NuestroServiciosText[e.target.id];
+    nuestrosServiciosCambiarElementos(e.target.id);
     alinearTexto(e.target.id + "-text");
     pintarLineaVertical(e.target.id + "-text");
 });
+
+function nuestrosServiciosCambiarElementos(id="contruccion") {
+    var elemento1 = document.getElementById(id); // llamar elemento al hacer click y obtiene el id
+    elemento1.classList.add("li-active"); // agregar clase al elemento que se le hizo click
+    elemento1.style.color = "white";
+    var elemento2 = document.getElementById(id+ "-text"); // llamar donde se va a poner el text del objecto NuestroServiciosText
+    elemento2.textContent = NuestroServiciosText[id];
+}
 
 function cleanElements() { // funcion quita el estilo de los li del menu de nuestrosservicios
     for (var key in NuestroServiciosText) {
@@ -134,8 +151,42 @@ function cleanMargin_alinearTexto() {
 
 function alinearTexto(id) { // funcion alinea texto de la seccion nuestrosservicios usando el objeto NuestroServiciosEstilo
     cleanMargin_alinearTexto();
+    width = screen.width;
+
+    if(width < 576) {
+        alinearTextoMobile(id);
+        return
+    }
+    alinearTextoDesktop(id);
+}
+
+function alinearTextoDesktop(id){
+
     var elemento = document.getElementById(id);
-    elemento.style.marginTop = (NuestroServiciosEstilo[id]*72) + "px";
+    var nuestrosservicios = document.querySelector('.nuestros-servicios-lista');
+    total = nuestrosservicios.offsetHeight - elemento.offsetHeight;
+
+    var pixeles = 72;
+
+    if (id === 'obras-text') {
+        elemento.style.marginTop = total + "px";
+        return
+    }
+    if (id === 'tramitología-text') {
+        elemento.style.marginTop = total-72 + "px";
+        return
+    }
+
+    elemento.style.marginTop = (NuestroServiciosEstilo[id]*pixeles) + "px";
+
+}
+
+function alinearTextoMobile(id){
+    var elemento = document.getElementById(id);
+    var nuestrosservicios = document.querySelector('.nuestros-servicios-lista');
+    total = nuestrosservicios.offsetHeight - elemento.offsetHeight;
+    var pixeles = 0;
+    elemento.style.marginTop = (NuestroServiciosEstilo[id]*pixeles) + "px";
 }
 
 function pintarLineaVertical(id) {  // mueve la linea naranja en la linea de nuestrosservicios
@@ -143,4 +194,28 @@ function pintarLineaVertical(id) {  // mueve la linea naranja en la linea de nue
     elemento.style.marginTop = (NuestroServiciosEstilo[id]*40) + "px";
 }
 
+function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
+    width = screen.width;
+    if(width < 576) {
+        var elemento1 = document.querySelector(".multipleitems-margin-vertical");
+        var elemento2 = elemento1.nextElementSibling;
+        elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+        var elemento1 = document.querySelector(".footer-wrapper-left");  // mover cotactecnos despues del logo en el footer
+        var elemento2 = document.querySelector(".footer-logo");
+        elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+    }
+}
 
+
+// my own media querys
+
+window.onload = (event) => {
+    changesElementoAfterSibling()
+    nuestrosServiciosCambiarElementos();
+};
+//   X-Small	None	<576px
+//   Small	sm	≥576px
+//   Medium	md	≥768px
+//   Large	lg	≥992px
+//   Extra large	xl	≥1200px
+//   Extra extra large	xxl	≥1400px
