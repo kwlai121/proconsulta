@@ -2,6 +2,15 @@
 @import "abstracts/_variables.scss";
 @import "abstracts/_mixins.scss";
 
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+
 body{
     font-family: 'Roboto', sans-serif;
     .support-company-area .support-wrapper .left-content {
@@ -22,7 +31,15 @@ body{
     .fix {
         overflow: hidden;
     }
-
+    .section-img-center {
+        text-align: center;
+        display: block;
+        align-items: center;
+    }
+    .center-img {
+        text-align: center;
+        align-items: center;
+    }
     .support-company-area .support-wrapper {
         display: flex;
         justify-content: space-between;
@@ -173,8 +190,8 @@ body{
     }
     .nuestros-clientes-border2 {
         border-bottom: 1px solid #DBDBDB;
+        padding-bottom: 5%;
     }
-
 
     // --> nuestros servicios
     .nuestros-servicios {
@@ -196,7 +213,7 @@ body{
         color: black;
         // padding: 10px;
         margin-bottom: 0%;
-        margin-left: 20%;
+        margin-left: 37%;
     }
     .li-active {
         background-color: $orange700;
@@ -217,12 +234,6 @@ body{
         background-color: $orange700;
         width: 4px;
     }
-    .proyectos {
-        padding-left: 10%;
-    }
-    .proyectos-carousel { // proyectos section
-        overflow-x: hidden;
-    }
     .carousel {
         width: 1033px;
     }
@@ -234,17 +245,16 @@ body{
         background-color: $purple700;
         color: white;
     }
-    .wrapper-scroll {
-        // margin-top: 2%;
-        padding: 2% 0 2% 0;
-
-    }
     .scroll-carousel {
         width: 160px;
         height: 4px;
         background-color: #DFDFDF;
         float: left;
         margin-top: 1.2%;
+        margin-left: 22%;
+    }
+    .scroll-line-top {
+        margin-top: 2.5%;
     }
     .scroll-line {
         width: 40px;
@@ -255,22 +265,61 @@ body{
         float: left;
         margin-left: 23%;
     }
-    .control-carousel-right {
-        display: inline;
+    .onclick-arrow {
+        background-color: $orange700;
     }
-    .control-carousel-left {
-        display: inline;
-        margin-left: 20px;
+    .onclick-arrow-reverse {
+        background-color: #DFDFDF;
     }
-    .control-carousel-click {
-        filter: invert(52%) sepia(17%) saturate(7408%) hue-rotate(349deg) brightness(99%) contrast(96%);
+    .arrow-right {
+        border: solid gray;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 9px;
+
     }
-    .control-carousel-click-reverse {
-        filter: invert(36%) sepia(0%) saturate(569%) hue-rotate(136deg) brightness(101%) contrast(92%);
+    .arrow-left {
+        border: solid gray;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 9px;
+
+    }
+    .arrow-position {
+        position: relative;
+        height: 67px;
+    }
+    .left-direction {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        position: absolute;
+        top: 22px;
+        right: 106px;
+    }
+    .line-left {
+        width: 45px;
+        // background-color: #262626;
+        height: 4px;
+        position: absolute;
+        top: 31px;
+        right: 82px;
     }
 
-
-
+    .right-direction {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        position: absolute;
+        top: 22px;
+        left: 29px;
+    }
+    .line-right {
+        width: 90px;
+        // background-color: #262626;
+        height: 4px;
+        position: absolute;
+        top: 31px;
+        left: -40px;
+    }
     .contactenos {
         background-image: url(../img/Group27.png);
         background-size: cover;
@@ -279,7 +328,7 @@ body{
         color: $white;
     }
     .contactenos-wrapper {
-        padding: 10% 5% 10% 20%;
+        padding: 10% 5% 10% 0%;
     }
     .contactenos-line {
         background-color: $white;
@@ -316,49 +365,672 @@ body{
         margin-right: 30px;
     }
 
-    .footer-contactenos {
-
+    .footer-wrapper-left p {
+        @include font($font-family-roboto, 16px, 400);
+    }
+    #footer-contactenos {
+        @include font($font-family-roboto, 20px, 500);
+        color: gray;
     }
 }
 
+
+@media (max-width: 406px) {
+    body{
+        .right-content .right-img img {
+            width: 300%;
+        }
+    }
+
+    .mx-auto {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+}
+
+// @media (max-width: 406px) {
+//     body{
+//         .right-content .right-img img {
+//             width: 300%;
+//         }
+//     }
+
+//     .mx-auto {
+//         margin-right: 0 !important;
+//         margin-left: 0 !important;
+//     }
+
+// }
+
+// Small devices (landscape phones, 576px and up)
 @include media-breakpoint-only(xs) {
     body {
         .pt-5 {
-            margin-top: auto;
+            padding-top: 0rem !important;
         }
-        .container {
-            padding-left: 5%;
-            padding-right: 5%;
+        .py-5 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .container, .container-fluid {
+            padding-left: 0%;
+            padding-right: 0%;
         }
         .mainTitle {
+            font-size: 30px;
+            width: 60%
+        }
+        .h-100 {
+            height: 60% !important;
+        }
+        .box-29291 {
+            margin-right: -68px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            padding: 1rem;
+        }
+        .mainTitle2, .heading-form {
             font-size: 25px;
-            width: 100%
+            width: 100%;
+            padding: 0% 2% 0% 2%;
+        }
+        .right-img img {
+            width: 228%;
+        }
+        .qsText {
+            padding: 0% 2% 0% 2%;
+            font-size: 16px;
+        }
+        .quienes-somos .card-quienes-somos {
+            width: auto;
+        }
+        .quienes-somos-p {
+            margin-top: 0px;
+        }
+
+        input[type=text] {
+            padding: 5px 3px;
+        }
+        input[type=number] {
+            padding: 5px 3px;
+        }
+        .mx-auto {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+        #recipeCarousel {
+            width: 100%;
+        }
+        .carousel-item {
+            width: 80%;
+        }
+        .card-body {
+            padding: 0%;
+        }
+        .nuestros-servicios-menu {
+            height: 320px;
+        }
+        .nuestros-servicios-lista li {
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            list-style-type: none;
+            padding: 2% 0% 2% 2%;
+            width: 80%;
+            height: 100%;
+            color: black;
+        }
+        .nuestros-servicios-text {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0%;
+            margin-left: 0%;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            padding: 1% 0 1% 0;
+        }
+        .scroll-carousel {
+            margin: 1% 21% 0px 2%;
+        }
+        .scroll-line {
+            margin: 0% 21% 0px 120px;
+        }
+
+        .control-carousel {
+            float: left;
+            margin: 1% 21% 0px 21%;
+        }
+        .proyectos-carousel-item2 {
+            display:none;
+        }
+
+        .contactenos-wrapper {
+            padding: 0;
+        }
+        .contactenos-wrapper > * {
+            margin: 10% 0% 10% 0%;
+        }
+        .btn-contactenos{
+            width: 60%;
+            margin-left: 5px;
+        }
+        .section-img-center {
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .center-img {
+            text-align: center;
+            display: block;
+            align-items: center;
+        }
+
+        .footer-wrapper-right {
+            padding: 5% 5% 5% 2%;
+            color: white;
+        }
+        .footer-socialmedia {
+            margin-top: 8%;
+        }
+        .footer-socialmedia > * {
+            margin-right: 5px;
+        }
+
+        .footer-wrapper-left p {
+            @include font($font-family-roboto, 14px, 300);
+        }
+        #footer-contactenos {
+            @include font($font-family-roboto, 16px, 500);
+            color: gray;
+        }
+        .control-carousel {
+            position: absolute;
+        }
+
+        .arrow-right {
+            border: solid gray;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 9px;
+
+        }
+        .arrow-left {
+            border: solid gray;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 9px;
+
+        }
+        .arrow-position {
+            position: relative;
+            height: 67px;
+        }
+        .left-direction {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            position: absolute;
+            top: 22px;
+            right: 106px;
+        }
+        .line-left {
+            width: 45px;
+            // background-color: #262626;
+            height: 4px;
+            position: absolute;
+            top: 31px;
+            right: 82px;
+        }
+
+        .right-direction {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            position: absolute;
+            top: 22px;
+            left: 29px;
+        }
+        .line-right {
+            width: 90px;
+            // background-color: #262626;
+            height: 4px;
+            position: absolute;
+            top: 31px;
+            left: -40px;
         }
     }
 }
 
+// Medium devices (tablets, 768px and up)
 @include media-breakpoint-only(sm) {
     body {
+        .pt-5 {
+            padding-top: 0rem !important;
+        }
+        .py-5 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .container, .container-fluid {
+            padding-left: 0%;
+            padding-right: 0%;
+        }
         .mainTitle {
+            font-size: 30px;
+            width: 60%
+        }
+        .h-100 {
+            height: 60% !important;
+        }
+        .box-29291 {
+            margin-right: -71px;
+            /* margin-top: 12px; */
+            margin-bottom: 213px;
+            padding: 3rem;
+        }
+        .center-img {
+            text-align: center;
+            align-items: center;
+            display: flex;
+        }
+        .mainTitle2, .heading-form {
             font-size: 25px;
+            width: 100%;
+            padding: 0% 2% 0% 2%;
+        }
+        .right-img img {
+            width: 275%;
+        }
+        .qsText {
+            padding: 0% 2% 0% 2%;
+            font-size: 16px;
+        }
+        .quienes-somos .card-quienes-somos {
+            width: auto;
+            // border: none;
+            // height: 10%;
+        }
+        .quienes-somos-p {
+            margin-top: 0px;
+        }
+
+        input[type=text] {
+            padding: 5px 3px;
+        }
+        input[type=number] {
+            padding: 5px 3px;
+        }
+        .nuestra-historia {
+            margin-right: 0;
+            margin-left: 0;
+            max-width: none;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+        .somos-mejor-opcion {
+            margin-right: 0;
+            margin-left: 0;
+            max-width: none;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+        .nuestros-servicios {
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+        .servicios-adicionales {
+            margin-right: 0;
+            margin-left: 0;
+            max-width: none;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+        .proyectos {
+            padding: 0%;
+        }
+        #recipeCarousel {
+            width: 100%;
+        }
+        .carousel-item {
+            width: 80%;
+        }
+        .card-body {
+            padding: 0%;
+        }
+        .nuestros-servicios .container {
+            margin-right: 0;
+            margin-left: 0;
+            padding-left: 0%;
+            padding-right: 0%;
+        }
+        .nuestros-servicios-menu {
+            height: 320px;
+        }
+        .nuestros-servicios-lista li {
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            list-style-type: none;
+            padding: 2% 0% 2% 2%;
+            width: 80%;
+            height: 100%;
+            color: black;
+        }
+        .nuestros-servicios-text {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0%;
+            margin-left: 0%;
+        }
+        .ftco-animate {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 7%;
+        }
+        .scroll-carousel {
+            margin: 1% 21% 0px 2%;
+        }
+        .scroll-line {
+            margin: 0% 21% 0px 120px;
+        }
+
+        .control-carousel {
+            float: left;
+            // margin-left: %;
+            // margin-top: 3px;
+            margin: 1% 21% 0px 21%;
+        }
+        .proyectos-carousel-item2 {
+            display:none;
+        }
+
+        .contactenos-wrapper {
+            padding: 0;
+        }
+        .contactenos-wrapper > * {
+            margin: 6% 0% 6% 0%;
+        }
+        .btn-contactenos{
+            width: 60%;
+            margin-left: 5px;
+        }
+        .footer-wrapper-right {
+            padding: 5% 5% 5% 2%;
+            color: white;
+        }
+        .footer-socialmedia {
+            margin-top: 8%;
+        }
+        .footer-socialmedia > * {
+            margin-right: 5px;
+        }
+
+        .footer-wrapper-left p {
+            @include font($font-family-roboto, 14px, 300);
+        }
+        #footer-contactenos {
+            @include font($font-family-roboto, 16px, 500);
+            color: gray;
+        }
+        .control-carousel {
+            position: absolute;
+        }
+
+        .arrow-right {
+            border: solid gray;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 9px;
+
+        }
+        .arrow-left {
+            border: solid gray;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 9px;
+
+        }
+        .arrow-position {
+            position: relative;
+            height: 67px;
+        }
+        .left-direction {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            position: absolute;
+            top: 22px;
+            right: 106px;
+        }
+        .line-left {
+            width: 45px;
+            // background-color: #262626;
+            height: 4px;
+            position: absolute;
+            top: 31px;
+            right: 82px;
+        }
+
+        .right-direction {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            position: absolute;
+            top: 22px;
+            left: 29px;
+        }
+        .line-right {
+            width: 90px;
+            // background-color: #262626;
+            height: 4px;
+            position: absolute;
+            top: 31px;
+            left: -40px;
         }
     }
 }
 
+// Large devices (desktops, 992px and up)
 @include media-breakpoint-only(md) {
+    body {
+        .container {
+            padding-left: 0%;
+            padding-right: 0%;
+        }
+        .pt-5 {
+            padding-top: 0rem !important;
+        }
+        .center-img {
+            text-align: center;
+            align-items: center;
+            display: flex;
+        }
+        .quienes-somos-text {
+            padding-right: 0%;
+        }
+        .quienes-somos .card-quienes-somos {
+            width: 100%;
+            border: none;
+            // height: 10%;
+        }
+        .control-carousel {
+            position: absolute;
+        }
 
+        .arrow-right {
+            border: solid gray;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 9px;
+
+        }
+        .arrow-left {
+            border: solid gray;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 9px;
+
+        }
+        .arrow-position {
+            position: relative;
+            height: 67px;
+        }
+        .left-direction {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            position: absolute;
+            top: 22px;
+            right: 106px;
+        }
+        .line-left {
+            width: 45px;
+            // background-color: #262626;
+            height: 4px;
+            position: absolute;
+            top: 31px;
+            right: 82px;
+        }
+
+        .right-direction {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            position: absolute;
+            top: 22px;
+            left: 29px;
+        }
+        .line-right {
+            width: 90px;
+            // background-color: #262626;
+            height: 4px;
+            position: absolute;
+            top: 31px;
+            left: -40px;
+        }
+        .scroll-carousel {
+            margin-top: 7.2%;
+            margin-left: 3%;
+        }
+        .carousel {
+            width: 100%;
+        }
+        .proyectos-carousel {
+            // padding-left: 0%;
+        }
+        .contactenos-wrapper {
+            padding: 0% 0% 0% 0%;
+        }
+        .footer-socialmedia > * {
+            margin-right: 10px;
+        }
+    }
 }
 
+// X-Large devices (large desktops, 1200px and up)
 @include media-breakpoint-only(lg) {
+    .card {
+        width: 26.1rem;
+    }
+    // #proyectos {
+    //     margin-left: 15%;
+    // }
+    // .proyectos-carousel-row {
+    //     width: 952px;
+    // }
+    .nuestros-servicios-menu .nuestros-servicios-lista li {
+        width: 253px;
+    }
+    .contactenos-wrapper {
+        padding: 10% 5% 10% 0%;
+    }
+    .scroll-carousel {
+        margin: 10% 0% 5% 20%;
+    }
 
 }
 
-@media only screen and (min-width: 1441px) and (max-width: 1800px){
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
     .support-company-area .support-wrapper .left-content {
         padding-left: 200px;
         width: 49%;
     }
+    .proyectos .mx-auto {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+    }
+    .card {
+        width: 26.1rem;
+    }
+    // #proyectos {
+    //     margin-left: 15%;
+    // }
+    // .proyectos-carousel-row {
+    //     width: 952px;
+    // }
+    // .proyectos-card {
+    //     margin-left: 8%;
+    // }
+    .scroll-carousel {
+        margin: 10% 0% 5% 22%;
+    }
+    .scroll-line-top {
+        margin-top: 2.5%;
+    }
+    .control-carousel {
+        position: absolute;
+    }
+
+    .arrow-right {
+        border: solid gray;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 9px;
+
+    }
+    .arrow-left {
+        border: solid gray;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 9px;
+
+    }
+    .arrow-position {
+        position: relative;
+        height: 67px;
+    }
+    .left-direction {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        position: absolute;
+        top: 22px;
+        right: 106px;
+    }
+    .line-left {
+        width: 45px;
+        background-color: #262626;
+        height: 4px;
+        position: absolute;
+        top: 31px;
+        right: 82px;
+    }
+
+    .right-direction {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        position: absolute;
+        top: 22px;
+        left: 29px;
+    }
+    .line-right {
+        width: 90px;
+        background-color: #262626;
+        height: 4px;
+        position: absolute;
+        top: 31px;
+        left: -40px;
+    }
+    .contactenos-wrapper {
+        padding: 10% 5% 10% 0%;
+    }
 }
+
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px){
     .support-company-area .support-wrapper .left-content {
@@ -375,38 +1047,3 @@ body{
 
 
 
-
-//  -->  Carousel
-@media (max-width: 767px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-  }
-
-  .carousel-inner .carousel-item.active,
-  .carousel-inner .carousel-item-next,
-  .carousel-inner .carousel-item-prev {
-    display: flex;
-  }
-
-  /* medium and up screens */
-  @media (min-width: 768px) {
-
-    .carousel-inner .carousel-item-end.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(25%);
-    }
-
-    .carousel-inner .carousel-item-start.active,
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-25%);
-    }
-  }
-
-  .carousel-inner .carousel-item-end,
-  .carousel-inner .carousel-item-start {
-  transform: translateX(0);
-  }

@@ -1,4 +1,5 @@
 
+// quienes somos: cambia imagen
 $(document).ready(function(){
     $("#satisfacer").hover(
         function() {$(this).attr("src","img/satisfacer.png");},
@@ -21,30 +22,10 @@ $(document).ready(function(){
 });
 
 
+// Proyectos
 
-// Carousel control
-
-let items = document.querySelectorAll('.carousel .carousel-item')
-
-items.forEach((el) => {
-    const minPerSlide = 2
-    let next = el.nextElementSibling
-
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-        	next = items[0]
-      	}
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
-
-
-// Carousel listener: revisa cada vez que se mueve el carousel.
-// pinta la barra
-const myCarousel = document.getElementById('recipeCarousel')
+// Carousel listener: revisa cada vez que se mueve el carousel. Pinta la barra
+const myCarousel = document.getElementById('carouselExampleControls')
 myCarousel.addEventListener('slide.bs.carousel', event => {
   var children = event.target.childNodes[1].childNodes;
     for(child in children){
@@ -60,22 +41,42 @@ function pintarBarraCarousel(barLevel) {
     elemento.style.marginLeft = ((barLevel-1) * 40) + "px";
 }
 
+// // cuando se hace click sobre botones carousel
+document.getElementById("carousel-arrow-left").addEventListener('click', function (e) {
+    addColorArrowCarousel("#DFDFDF", "#F86C1D")
+    removeColorBarCarousel()
+    addColorBarCarousel("onclick-arrow", "onclick-arrow-reverse")
+})
 
-document.getElementById("control-carousel-left").classList.add("control-carousel-click");
-document.getElementById("control-carousel-right").classList.add("control-carousel-click-reverse");
-// onclick botones carousel, cambia color
-document.getElementById("control-carousel-left").addEventListener('click', function (e) {
-    e.target.classList.add("control-carousel-click"); // control-carousel-click-reverse
-    elemento = document.getElementById("control-carousel-right");
-    elemento.classList.add("control-carousel-click-reverse"); // make gray
-    elemento.classList.remove("control-carousel-click");
+document.getElementById("carousel-arrow-right").addEventListener('click', function (e) {
+    addColorArrowCarousel("#F86C1D", "#DFDFDF")
+    removeColorBarCarousel()
+    addColorBarCarousel("onclick-arrow-reverse", "onclick-arrow")
 })
-document.getElementById("control-carousel-right").addEventListener('click', function (e) {
-    e.target.classList.add("control-carousel-click");
-    elemento = document.getElementById("control-carousel-left");
-    elemento.classList.add("control-carousel-click-reverse"); // make gray
-    elemento.classList.remove("control-carousel-click");
-})
+
+function addColorArrowCarousel(color1, color2) {
+    arrowRight = document.querySelector(".arrow-right");
+    arrowLeft = document.querySelector(".arrow-left");
+    arrowRight.style.borderColor = color1;
+    arrowLeft.style.borderColor = color2;
+}
+
+
+function addColorBarCarousel(class1, class2) {
+    lineRight = document.querySelector(".line-right");
+    lineLeft =  document.querySelector(".line-left")
+    lineLeft.classList.add(class1);       // add color
+    lineRight.classList.add(class2);
+}
+
+function removeColorBarCarousel(){
+    lineRight = document.querySelector(".line-right");
+    lineLeft =  document.querySelector(".line-left")
+    lineRight.classList.remove("onclick-arrow"); // remove all color from lines
+    lineRight.classList.remove("onclick-arrow-reverse");
+    lineLeft.classList.remove("onclick-arrow");
+    lineLeft.classList.remove("onclick-arrow-reverse");
+}
 
 
 // onclick nuestros-servicios-lista
@@ -101,14 +102,18 @@ const NuestroServiciosEstilo = {
 document.querySelector(".nuestros-servicios-lista").addEventListener("click", function(e){  // evento click en el menu de nuestros servicios
     removeText(); // remueve el texto de todos los elementos li de la par
     cleanElements(); // quitar clase li-active de todos los li del menu y poner color negro (default)
-    var elemento1 = document.getElementById(e.target.id); // llamar elemento al hacer click y obtiene el id
-    elemento1.classList.add("li-active"); // agregar clase al elemento que se le hizo click
-    elemento1.style.color = "white";
-    var elemento2 = document.getElementById(e.target.id + "-text"); // llamar donde se va a poner el text del objecto NuestroServiciosText
-    elemento2.textContent = NuestroServiciosText[e.target.id];
+    nuestrosServiciosCambiarElementos(e.target.id);
     alinearTexto(e.target.id + "-text");
     pintarLineaVertical(e.target.id + "-text");
 });
+
+function nuestrosServiciosCambiarElementos(id="contruccion") {
+    var elemento1 = document.getElementById(id); // llamar elemento al hacer click y obtiene el id
+    elemento1.classList.add("li-active"); // agregar clase al elemento que se le hizo click
+    elemento1.style.color = "white";
+    var elemento2 = document.getElementById(id+ "-text"); // llamar donde se va a poner el text del objecto NuestroServiciosText
+    elemento2.textContent = NuestroServiciosText[id];
+}
 
 function cleanElements() { // funcion quita el estilo de los li del menu de nuestrosservicios
     for (var key in NuestroServiciosText) {
@@ -125,17 +130,48 @@ function removeText() { // funcion borra texto de los elementos de nuestrosservi
     }
 }
 
+
+
+// nuestros servicios
+function alinearTexto(id) { // funcion alinea texto de la seccion nuestrosservicios usando el objeto NuestroServiciosEstilo
+    cleanMargin_alinearTexto();
+    width = screen.width;
+    if(width < 768) {
+        alinearTextoMobile(id);
+        return
+    }
+    alinearTextoDesktop(id);
+}
+
+function alinearTextoDesktop(id){
+    var elemento = document.getElementById(id);
+    var nuestrosservicios = document.querySelector('.nuestros-servicios-lista');
+    total = nuestrosservicios.offsetHeight - elemento.offsetHeight;
+    var pixeles = 72;
+    if (id === 'obras-text') {
+        elemento.style.marginTop = total + "px";
+        return
+    }
+    if (id === 'tramitología-text') {
+        elemento.style.marginTop = total-72 + "px";
+        return
+    }
+    elemento.style.marginTop = (NuestroServiciosEstilo[id]*pixeles) + "px";
+}
+
+function alinearTextoMobile(id){
+    var elemento = document.getElementById(id);
+    var nuestrosservicios = document.querySelector('.nuestros-servicios-lista');
+    total = nuestrosservicios.offsetHeight - elemento.offsetHeight;
+    var pixeles = 0;
+    elemento.style.marginTop = (NuestroServiciosEstilo[id]*pixeles) + "px";
+}
+
 function cleanMargin_alinearTexto() {
     for (var key in NuestroServiciosEstilo) {
         var elemento = document.getElementById(key);
         elemento.style.marginTop = "0px";
     }
-}
-
-function alinearTexto(id) { // funcion alinea texto de la seccion nuestrosservicios usando el objeto NuestroServiciosEstilo
-    cleanMargin_alinearTexto();
-    var elemento = document.getElementById(id);
-    elemento.style.marginTop = (NuestroServiciosEstilo[id]*72) + "px";
 }
 
 function pintarLineaVertical(id) {  // mueve la linea naranja en la linea de nuestrosservicios
@@ -144,3 +180,42 @@ function pintarLineaVertical(id) {  // mueve la linea naranja en la linea de nue
 }
 
 
+// nuestra historia
+function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
+    width = screen.width;
+    console.log("working ", width)
+    if(width < 992) {
+        changeElement()
+    }
+    if(width < 768) {
+        changeElementFooter()
+    }
+}
+
+function changeElement(){
+    var elemento1 = document.querySelector(".multipleitems-margin-vertical");
+    var elemento2 = elemento1.nextElementSibling;
+    elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+
+}
+
+function changeElementFooter() {
+    var elemento1 = document.querySelector(".footer-wrapper-left");  // mover cotactecnos despues del logo en el footer
+    var elemento2 = document.querySelector(".footer-logo");
+    elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+}
+
+// my own media querys
+
+window.onload = (event) => {
+    changesElementoAfterSibling()
+    nuestrosServiciosCambiarElementos();
+    addColorArrowCarousel("#F86C1D", "#DFDFDF")
+    addColorBarCarousel("onclick-arrow-reverse", "onclick-arrow")
+};
+//   X-Small	None	<576px
+//   Small	sm	≥576px
+//   Medium	md	≥768px
+//   Large	lg	≥992px
+//   Extra large	xl	≥1200px
+//   Extra extra large	xxl	≥1400px
