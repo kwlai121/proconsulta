@@ -1,5 +1,6 @@
 
 // quienes somos: cambia imagen
+//
 $(document).ready(function(){
     $("#satisfacer").hover(
         function() {$(this).attr("src","img/satisfacer.png");},
@@ -78,6 +79,30 @@ function removeColorBarCarousel(){
     lineLeft.classList.remove("onclick-arrow-reverse");
 }
 
+function addColorArrowCarousel(color1, color2) {
+    arrowRight = document.querySelector(".arrow-right");
+    arrowLeft = document.querySelector(".arrow-left");
+    arrowRight.style.borderColor = color1;
+    arrowLeft.style.borderColor = color2;
+}
+
+
+function addColorBarCarousel(class1, class2) {
+    lineRight = document.querySelector(".line-right");
+    lineLeft =  document.querySelector(".line-left")
+    lineLeft.classList.add(class1);       // add color
+    lineRight.classList.add(class2);
+}
+
+function removeColorBarCarousel(){
+    lineRight = document.querySelector(".line-right");
+    lineLeft =  document.querySelector(".line-left")
+    lineRight.classList.remove("onclick-arrow"); // remove all color from lines
+    lineRight.classList.remove("onclick-arrow-reverse");
+    lineLeft.classList.remove("onclick-arrow");
+    lineLeft.classList.remove("onclick-arrow-reverse");
+}
+
 
 // onclick nuestros-servicios-lista
 
@@ -106,6 +131,14 @@ document.querySelector(".nuestros-servicios-lista").addEventListener("click", fu
     alinearTexto(e.target.id + "-text");
     pintarLineaVertical(e.target.id + "-text");
 });
+
+function nuestrosServiciosCambiarElementos(id="contruccion") {
+    var elemento1 = document.getElementById(id); // llamar elemento al hacer click y obtiene el id
+    elemento1.classList.add("li-active"); // agregar clase al elemento que se le hizo click
+    elemento1.style.color = "white";
+    var elemento2 = document.getElementById(id+ "-text"); // llamar donde se va a poner el text del objecto NuestroServiciosText
+    elemento2.textContent = NuestroServiciosText[id];
+}
 
 function nuestrosServiciosCambiarElementos(id="contruccion") {
     var elemento1 = document.getElementById(id); // llamar elemento al hacer click y obtiene el id
@@ -179,7 +212,47 @@ function pintarLineaVertical(id) {  // mueve la linea naranja en la linea de nue
     elemento.style.marginTop = (NuestroServiciosEstilo[id]*40) + "px";
 }
 
+function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
+    width = screen.width;
+    if(width < 576) {
+        var elemento1 = document.querySelector(".multipleitems-margin-vertical");
+        var elemento2 = elemento1.nextElementSibling;
+        elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+        var elemento1 = document.querySelector(".footer-wrapper-left");  // mover cotactecnos despues del logo en el footer
+        var elemento2 = document.querySelector(".footer-logo");
+        elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+    }
+}
 
+
+// my own media querys
+
+// nuestra historia
+function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
+    width = screen.width;
+    console.log("working ", width)
+    if(width < 992) {
+        changeElement()
+    }
+    if(width < 768) {
+        changeElementFooter()
+    }
+}
+
+function changeElement(){
+    var elemento1 = document.querySelector(".multipleitems-margin-vertical");
+    var elemento2 = elemento1.nextElementSibling;
+    elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+
+}
+
+function changeElementFooter() {
+    var elemento1 = document.querySelector(".footer-wrapper-left");  // mover cotactecnos despues del logo en el footer
+    var elemento2 = document.querySelector(".footer-logo");
+    elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
+}
+
+// my own media querys
 // nuestra historia
 function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
     width = screen.width;
