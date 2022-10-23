@@ -225,12 +225,9 @@ function changesElementoAfterSibling() { // para pintura nuestra historia, mobil
 }
 
 
-// my own media querys
-
 // nuestra historia
 function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
     width = screen.width;
-    console.log("working ", width)
     if(width < 992) {
         changeElement()
     }
@@ -252,11 +249,10 @@ function changeElementFooter() {
     elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
 }
 
-// my own media querys
+
 // nuestra historia
 function changesElementoAfterSibling() { // para pintura nuestra historia, mobile cambia de lugar
     width = screen.width;
-    console.log("working ", width)
     if(width < 992) {
         changeElement()
     }
@@ -278,7 +274,7 @@ function changeElementFooter() {
     elemento2.parentNode.insertBefore(elemento1, elemento2.nextSibling);
 }
 
-// my own media querys
+
 
 window.onload = (event) => {
     changesElementoAfterSibling()
@@ -286,9 +282,3 @@ window.onload = (event) => {
     addColorArrowCarousel("#F86C1D", "#DFDFDF")
     addColorBarCarousel("onclick-arrow-reverse", "onclick-arrow")
 };
-//   X-Small	None	<576px
-//   Small	sm	≥576px
-//   Medium	md	≥768px
-//   Large	lg	≥992px
-//   Extra large	xl	≥1200px
-//   Extra extra large	xxl	≥1400px

@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  mx-auto ">
                 <li class="nav-item">
-                  <a class="nav-link" href="menu.html">Quienes somos?</a>
+                  <a class="nav-link" href="#quienessomos">Quienes somos?</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">Nuestra Historia</a>
+                  <a class="nav-link" href="#nuestrahistoria">Nuestra Historia</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="book.html">Servicios</a>
+                  <a class="nav-link" href="#servicios">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="book.html">Proyectos</a>
+                    <a class="nav-link" href="#proyectos">Proyectos</a>
                   </li>
               </ul>
               <div class="user_option">
@@ -59,25 +59,30 @@
         </div>
     </div>
 
-    <section class="support-company-area fix pt-10">
+    <section class="support-company-area fix pt-10" id="contactenos">
         <div class="support-wrapper align-items-end">
             <div class="left-content">
                 <div class="h-100 bg-purple box-29291">
                     <h2 class="heading-form">Contáctenos</h2>
-                    <form action="#" class="contact-form">
+                    <form name="contactenosForm" action="contactenos.php" class="contact-form" id="contactenos-form">
                         <div class="form-group mb-2">
-                          <input type="text" class="form-control" placeholder="Nombre">
+                          <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="name">
+                          <div class="error" id="nameErr"></div>
                         </div>
                         <div class="form-group mb-2">
-                          <input type="text" class="form-control" placeholder="Email">
+                          <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+                          <div class="error" id="phoneErr"></div>
                         </div>
                         <div class="form-group mb-2">
-                          <input type="number" class="form-control" placeholder="Teléfono">
+                          <input type="number" class="form-control" placeholder="Teléfono" name="telefono" id="phone">
+                          <div class="error" id="emailErr"></div>
                         </div>
                         <div class="form-group mb-2">
-                          <input type="text" class="form-control" placeholder="Proyecto">                        </div>
+                          <input type="text" class="form-control" placeholder="Proyecto" name="proyecto" id="project">
+                          <div class="error" id="projectErr"></div>
+                        </div>
                         <div class="form-group">
-                            <button type="submit" class="form-control submit px-3">Enviar</button>
+                            <button type="submit" class="form-control submit px-3" id="contactenos-enviar">Enviar</button>
                         </div>
                       </form>
                   </div>
@@ -92,7 +97,7 @@
     </section>
 
     <!--Quienes somos start-->
-    <div class="container py-5 quienes-somos">
+    <div class="container py-5 quienes-somos" id="quienessomos">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-xs-12">
                 <h1 class="mainTitle2">Quienes somos?</h1>
@@ -132,7 +137,7 @@
     <!--Quienes somos End-->
 
     <!--Nuestra Historia Start-->
-    <div class="container pb-5 nuestra-historia nuestra-historia">
+    <div class="container pb-5 nuestra-historia nuestra-historia" id="nuestrahistoria">
         <div class="row">
             <div class="col-lg-5 col-md-12 col-xs-12 multipleitems-margin-vertical">
                 <small>Nuestra historia</small><div class="line"></div>
@@ -172,7 +177,7 @@
 
 
     <!-- Nuestros Servicios Start -->
-    <div class="container-fluid nuestros-servicios">
+    <div class="container-fluid nuestros-servicios" id="servicios">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 multipleitems-margin-vertical">
@@ -294,7 +299,7 @@
                       <div class="carousel-inner">
                         <div class="carousel-item item1 active" data-bs-interval="100000">
                           <div class="row proyectos-carousel-row">
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                   <div class="card proyectos-card mx-auto">
                                     <img src="img/slide1.jpg" class="card-img-top" alt="...">
                                     <div class="card-body card-body-proyectos">
@@ -303,7 +308,7 @@
                                     </div>
                                   </div>
                               </div>
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 proyectos-carousel-item2">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 proyectos-carousel-item2">
                                   <div class="card">
                                       <img src="img/slide2.jpg" class="card-img-top" alt="...">
                                       <div class="card-body card-body-proyectos">
@@ -316,7 +321,7 @@
                         </div>
                         <div class="carousel-item item2" data-bs-interval="100000">
                           <div class="row proyectos-carousel-row">
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                   <div class="card proyectos-card mx-auto">
                                       <img src="img/slide2.jpg" class="card-img-top" alt="...">
                                       <div class="card-body card-body-proyectos">
@@ -325,7 +330,7 @@
                                     </div>
                                   </div>
                               </div>
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 proyectos-carousel-item2">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 proyectos-carousel-item2">
                                   <div class="card">
                                       <img src="img/slide3.jpg" class="card-img-top" alt="...">
                                       <div class="card-body card-body-proyectos">
@@ -338,7 +343,7 @@
                         </div>
                         <div class="carousel-item item3" data-bs-interval="100000">
                           <div class="row proyectos-carousel-row">
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                   <div class="card proyectos-card mx-auto">
                                       <img src="img/slide3.jpg" class="card-img-top" alt="...">
                                       <div class="card-body card-body-proyectos">
@@ -347,7 +352,7 @@
                                     </div>
                                   </div>
                               </div>
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 proyectos-carousel-item2">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 proyectos-carousel-item2">
                                   <div class="card">
                                       <img src="img/slide4.jpg" class="card-img-top" alt="...">
                                       <div class="card-body card-body-proyectos">
@@ -360,7 +365,7 @@
                         </div>
                         <div class="carousel-item item4" data-bs-interval="100000">
                           <div class="row proyectos-carousel-row">
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                   <div class="card proyectos-card mx-auto">
                                       <img src="img/slide4.jpg" class="card-img-top" alt="...">
 
@@ -370,7 +375,7 @@
                                         </div>
                                   </div>
                               </div>
-                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 proyectos-carousel-item2">
+                              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 proyectos-carousel-item2">
                                   <div class="card">
                                       <img src="img/slide1.jpg" class="card-img-top" alt="...">
                                       <div class="card-body card-body-proyectos">
@@ -384,12 +389,12 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 scroll-line-top">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 scroll-line-top">
                             <div class="scroll-carousel">
                                 <div class="scroll-line"></div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7">
                             <div class="control-carousel arrow-position">
                                 <div type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" id="carousel-arrow-left">
                                     <div class="arrow-left left-direction"></div>
@@ -416,7 +421,7 @@
                         <div class="contactenos-wrapper">
                             <div><small class="contactenos-small">Contactenos</small><div class="line contactenos-line"></div></div>
                             <h1 class="mainTitle2">Seamos socios! Queremos trabajar en su proyecto!</h1>
-                            <button type="button" class="btn btn-contactenos">Contactenos</button>
+                            <a href="#contactenos" type="button" class="btn btn-contactenos">Contactenos</a>
                         </div>
                     </div>
                 </div>
@@ -460,5 +465,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="js/script.js"></script>
+<script src="js/form.js"></script>
 
 </html>
