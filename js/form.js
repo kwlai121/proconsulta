@@ -6,6 +6,13 @@ const cleanFormConversemos = () => {
     document.getElementById("project").value = "";
   }
 
+const sentForm = (elemId, msg) => {
+    elem = document.getElementById(elemId);
+    elem.innerHTML = msg;
+    elem.style.backgroundColor = "green";
+    elem.style.padding = "2px 2px 2px 2px";
+}
+
 // form validation
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
@@ -26,11 +33,11 @@ function validateForm() {
     var nameErr = emailErr = phoneErr = projectErr = true;
     // Validate name
     if(name == "") {
-        printError("nameErr", "Please enter your name");
+        printError("nameErr", "Introduzca su nombre");
     } else {
         const regex = /^[a-zA-Z\s]+$/;
         if(regex.test(name) === false) {
-            printError("nameErr", "Please enter a valid name");
+            printError("nameErr", "Introduzca su nombre");
         } else {
             printError("nameErr", "");
             nameErr = false;
@@ -39,12 +46,12 @@ function validateForm() {
 
     // Validate email address
     if(email == "") {
-        printError("emailErr", "Please enter your email address");
+        printError("emailErr", "Introduzca un correo valido");
     } else {
         // Regular expression for basic email validation
         const regex = /^\S+@\S+\.\S+$/;
         if(regex.test(email) === false) {
-            printError("emailErr", "Please enter a valid email address");
+            printError("emailErr", "Introduzca un correo valido");
         } else{
             printError("emailErr", "");
             emailErr = false;
@@ -66,7 +73,7 @@ function validateForm() {
 
     // Validate project
     if(project == "") {
-        printError("projectErr", "Fill this field/Llene este campo.");
+        printError("projectErr", "Introduzca su proyecto");
     } else {
         printError("projectErr", "");
         projectErr = false;
@@ -98,8 +105,8 @@ form.addEventListener('submit', function (event) {
   const phone = document.getElementById("phone").value;
   const project = document.getElementById("project").value;
 
-  $("#contactenos_modal").modal("show");
   cleanFormConversemos()
+  sentForm("sentForm", "Su mensaje ha sido enviado. Gracias!")
 //   $.ajax({
 //           type : "POST",  //type of method
 //           url  : "contactenos.php",  //your page
@@ -111,8 +118,8 @@ form.addEventListener('submit', function (event) {
 //           },
 //           success: function(res){
 //               if (res.status === 'true' || res.status === true) {
-//                   $("#modal").modal("show");
 //                 //   cleanFormConversemos()
+//                      sentForm("sentForm", "Su mensaje ha sido enviado. Gracias!")
 //               }
 //           },
 //           error: function(res){
