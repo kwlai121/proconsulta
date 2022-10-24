@@ -10888,6 +10888,7 @@ body .mainTitle {
   font-family: "Montserrat", sans-serif;
   font-size: 52px;
   font-weight: 700;
+  width: 50%;
 }
 body .mainTitle span {
   color: #F86C1D;
@@ -10933,7 +10934,6 @@ body .quienes-somos-p {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 10px;
 }
 body .card-quienes-somos:hover {
   background-color: #262626;
@@ -10965,6 +10965,11 @@ body .nuestros-servicios-lista li {
   height: 72px;
   color: black;
 }
+body .nuestros-servicios-lista li:hover {
+  background-color: #DBDBDB;
+  color: #FFFFFF;
+  cursor: pointer;
+}
 body .nuestros-servicios-text {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -10977,6 +10982,7 @@ body .nuestros-servicios-text {
 body .li-active {
   background-color: #F86C1D;
   color: #FFFFFF;
+  box-shadow: rgba(248, 108, 29, 0.4) 0px 7px 29px 0px;
 }
 body .li-inactive {
   color: black;
@@ -11097,7 +11103,7 @@ body .btn-contactenos {
   border-radius: 0%;
 }
 body .btn-contactenos:hover {
-  background-color: #cd5b1a;
+  background-color: #FA9861;
 }
 body .footer {
   background-color: #262626;
@@ -11125,7 +11131,7 @@ body #footer-contactenos {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: gray;
+  color: #5F5F5F;
 }
 
 @media (min-width: 1400px) {

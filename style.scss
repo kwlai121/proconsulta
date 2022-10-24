@@ -129,6 +129,7 @@ body{
         span{
             color: $orange700;
         }
+        width: 50%;
     }
 
     .mainTitle2{
@@ -172,10 +173,10 @@ body{
     }
     .quienes-somos-p {
         @include font($font-family-roboto, 20px, 700);
-        margin-top: 10px;
+
     }
     .card-quienes-somos:hover {
-        background-color: #262626;
+        background-color: $black;
     }
 
     // --> Algunos de nuestros clientes Start borde
@@ -206,6 +207,12 @@ body{
         width: 293px;
         height: 72px;
         color: black;
+        &:hover{
+            background-color: $grey200;
+            color: $white;
+            cursor: pointer;
+        }
+    
     }
     .nuestros-servicios-text {
         @include font($font-family-roboto, 18px, 400);
@@ -218,6 +225,7 @@ body{
     .li-active {
         background-color: $orange700;
         color: $white;
+        box-shadow: rgb(248 108 29 / 40%) 0px 7px 29px 0px;
     }
     .li-inactive {
         color: black;
@@ -342,10 +350,11 @@ body{
         color: white;
         width: 255px;
         border-radius: 0%;
+        &:hover{
+            background-color: $orange400;
+        }
     }
-    .btn-contactenos:hover {
-        background-color: #cd5b1a;
-    }
+
 
     .footer {
         background-color: #262626;
@@ -370,7 +379,7 @@ body{
     }
     #footer-contactenos {
         @include font($font-family-roboto, 20px, 500);
-        color: gray;
+        color: $grey400;
     }
 }
 
