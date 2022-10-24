@@ -11532,7 +11532,8 @@ body #footer-contactenos {
   }
   body .mainTitle {
     font-size: 30px;
-    width: 60%;
+    width: 100%;
+    text-align: center;
   }
   body .h-100 {
     height: 60% !important;
@@ -11559,7 +11560,7 @@ body #footer-contactenos {
     width: auto;
   }
   body .quienes-somos-p {
-    margin-top: 0px;
+    line-height: 20px;
   }
   body input[type=text] {
     padding: 5px 3px;
