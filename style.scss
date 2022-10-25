@@ -18,7 +18,9 @@ body{
         //padding-left: 366px;
     }
 
-
+    .navbar-toggler{
+        border: none;
+    }
     .support-company-area .support-wrapper .right-content {
         width: 60%;
         position: relative;
@@ -181,7 +183,7 @@ body{
 
     // --> Algunos de nuestros clientes Start borde
     .nuestros-clientes-border1 {
-        border-top: 1px solid #DBDBDB;
+        border-top: 1px solid $grey200;
     }
     .nuestros-clientes-border1-margin{
         margin-top: 5%;
@@ -190,13 +192,13 @@ body{
         margin-bottom: 5%;
     }
     .nuestros-clientes-border2 {
-        border-bottom: 1px solid #DBDBDB;
+        border-bottom: 1px solid $grey200;
         padding-bottom: 5%;
     }
 
     // --> nuestros servicios
     .nuestros-servicios {
-        background: #F3F3F3;
+        background: $grey100;
     }
     // menu Nuestros Servicios
     .nuestros-servicios-lista li {
@@ -217,7 +219,7 @@ body{
     .nuestros-servicios-text {
         @include font($font-family-roboto, 18px, 400);
         list-style-type: none;
-        color: black;
+        color: $black;
         // padding: 10px;
         margin-bottom: 0%;
         margin-left: 37%;
@@ -251,7 +253,7 @@ body{
     }
     .card-body-proyectos {
         background-color: $purple700;
-        color: white;
+        color: $white;
     }
     .scroll-carousel {
         width: 160px;

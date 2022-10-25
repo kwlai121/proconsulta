@@ -10785,6 +10785,9 @@ body {
 body .support-company-area .support-wrapper .left-content {
   width: 40%;
 }
+body .navbar-toggler {
+  border: none;
+}
 body .support-company-area .support-wrapper .right-content {
   width: 60%;
   position: relative;
@@ -10975,7 +10978,7 @@ body .nuestros-servicios-text {
   font-size: 18px;
   font-weight: 400;
   list-style-type: none;
-  color: black;
+  color: #262626;
   margin-bottom: 0%;
   margin-left: 37%;
 }
@@ -11007,7 +11010,7 @@ body .card {
 }
 body .card-body-proyectos {
   background-color: #4E13AD;
-  color: white;
+  color: #FFFFFF;
 }
 body .scroll-carousel {
   width: 160px;
